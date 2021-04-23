@@ -1,0 +1,21 @@
+extends ../layout/default
+block content 
+	form(action="/book/update", method="post" enctype="multipart/form-data")
+		if rs && rs.id
+			input(type="hidden" name="id" value=`${rs.id}`)
+		input(type="hidden" name="page" value=`${page || 1}`) 
+		table.table.create-tb 
+			tbody 
+				include ../inc/inputForm
+				tr 
+					td 첨부파일
+					td 
+						if rs.savename
+							.file-wrap
+								if rs.src
+									img.thumb-img(src=`${rs.src}`, alt=`${rs.oriname}`)
+								span.file-name= rs.oriname
+								span.file-remove(onclick=`fileRemove(${rs.id})`) x
+						input.form-control-file(type="file" name="upfile" placeholder="첨부파일")
+		.text-center.my-5
+			button.btn.btn-info 수정

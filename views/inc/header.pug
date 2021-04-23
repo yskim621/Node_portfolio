@@ -1,0 +1,11 @@
+.header-wrapper.d-flex.justify-content-between.bg-dark.text-light 
+	.logo.p-3= TITLE
+	.navi-wrap.d-flex
+		a(href="/multer/create").navi.p-3 업로드테스트
+		a(href="/book").navi.p-3 도서리스트
+		a(href="/book/create").navi.p-3 도서등록
+		if user
+			a(href="/auth/logout").navi.p-3 로그아웃
+		else
+			a(href="/auth/join").navi.p-3 회원가입
+			a(href="/auth/login").navi.p-3 로그인
