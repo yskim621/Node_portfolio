@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `api` (
   `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,
   `userid` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `boards` (
   PRIMARY KEY (`id`),
   KEY `boards_ibfk_1` (`UserId`),
   CONSTRAINT `boards_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `seq-users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `books` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   CONSTRAINT `FK_books_users` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `files` (
   PRIMARY KEY (`id`),
   KEY `FK_files_books` (`bookid`),
   CONSTRAINT `FK_files_books` FOREIGN KEY (`bookid`) REFERENCES `books` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `seq-users` (
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `userid` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `api_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `api_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 

@@ -2,6 +2,9 @@
 # storages
 /storages
 
+# dotenv
+.env
+
 # Logs
 logs
 *.log
