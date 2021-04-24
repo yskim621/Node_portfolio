@@ -50,6 +50,7 @@ router.get('/login', isGuest, (req, res, next) => {
 	res.render('auth/login', pug)
 })
 
+
 router.post('/logon', isGuest,  async (req, res, next) => {
 	const done = (err, user, msg) => {
 		if(err) return next(err)
@@ -63,6 +64,7 @@ router.post('/logon', isGuest,  async (req, res, next) => {
 			})
 		}
 	}
+	// 라우터의 콜백 내 middleware 실행
 	passport.authenticate('local', done)(req, res, next)
 })
 
@@ -89,6 +91,10 @@ router.get('/api/valid-userid', isGuest, async (req, res, next) => {
 	}
 })
 
+router.get('/kakao', passport.authenticate('kakao'))
+router.get('/kakao/cb', passport.authenticate('kakao', {failureRedirect: '/'}, (req, res, next) => {
+	res.redirect('/')
+}))
 
 
 module.exports = router
