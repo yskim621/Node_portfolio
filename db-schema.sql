@@ -51,6 +51,8 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
+-- api ENUM('KA', 'NA', 'FA', 'GO')
+
 -- 테이블 booldook.users 구조 내보내기
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -59,6 +61,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `grade` tinyint NOT NULL DEFAULT '1',
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `api` enum('KA', 'NA', 'GO', 'FA', 'LO') DEFAULT 'LO',
+  `api_id` varchar(255),
+  `api_token` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
